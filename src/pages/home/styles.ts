@@ -8,6 +8,7 @@ export const ContainerScreen = styled(LinearGradient).attrs({ colors: ['#08244F'
   min-height: 100%;
   align-items: center;
   justify-content: center;
+  padding: 4% 8%;
 `;
 
 export const Title = styled.Text`
