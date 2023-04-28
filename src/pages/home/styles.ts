@@ -8,12 +8,41 @@ export const ContainerScreen = styled(LinearGradient).attrs({ colors: ['#08244F'
   min-height: 100%;
   align-items: center;
   justify-content: center;
-  padding: 4% 8%;
+  padding: 10% 8%;
 `;
 
-export const Title = styled.Text`
-  font-family: ${fonts.regular};
-  font-size: 30px;
+export const ContainerCardWeek = styled.View`
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 30px;
+  padding: 5%;
+`;
+
+export const Box = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+`;
+
+export const Icon = styled.Image`
+  max-height: 50px;
+  max-width: 50px;
+`;
+
+export const TitleCardWeek = styled.Text`
+  font-size: 20px;
+  font-family: ${fonts.bold};
   color: ${colors.white};
-  text-shadow: -2px 3px 1px rgba(0, 0, 0, 0.1);
+`;
+
+export const TextLoading = styled.Text`
+  font-size: 20px;
+  font-family: ${fonts.bold};
+  color: ${colors.white};
+  width: 100%;
+  text-align: center;
 `;
