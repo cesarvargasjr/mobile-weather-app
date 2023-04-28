@@ -8,6 +8,13 @@ export const Text = styled.Text`
   color: ${colors.white};
 `;
 
+export const TextDay = styled.Text`
+  font-size: 18px;
+  font-family: ${fonts.bold};
+  color: ${colors.white};
+  max-width: 130px;
+`;
+
 export const TextTempMin = styled.Text`
   font-size: 18px;
   font-family: ${fonts.bold};

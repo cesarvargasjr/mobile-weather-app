@@ -13,32 +13,35 @@ export const ContainerLoading = styled.View`
   justify-content: center;
 `;
 
-export const ContainerCardWeek = styled.View<{ hourNow: string }>`
+export const ContainerCardWeek = styled.View<{ currently: string }>`
   align-items: center;
   border-radius: 20px;
   width: 100%;
   margin-top: 30px;
   margin-bottom: 80px;
   padding: 5%;
-  /* opacity: 0.3; */
-  background-color: ${({ hourNow }) =>
-    hourNow > "17" && hourNow < "6"
+  background-color: ${({ currently }) =>
+    currently === "noite"
       ? colors.backgroundDay
       : colors.backgroundNight
   };
 `;
 
-export const ContainerDropDown = styled.ScrollView`
+export const ContainerDropDown = styled.ScrollView<{ currently: string }>`
   position: absolute;
   min-width: 230px;
   max-height: 140px;
   border-radius: 20px;
   padding: 20px 20px 0 20px;
-  background-color: ${colors.blue};
   top: 105px;
   left: 40px;
   z-index: 99999;
   flex-direction: column;
+  background-color:  ${({ currently }) =>
+    currently === "noite"
+      ? colors.blue
+      : colors.blueLight
+  };
 `;
 
 export const Box = styled.View`

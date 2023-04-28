@@ -8,17 +8,17 @@ interface CardProps {
   windSpeedy: string;
   rainProbability: string;
   humidity: string;
-  hourNow: string;
+  currently: string;
 }
 
 export const CardWeatherToday = ({
   windSpeedy,
   rainProbability,
   humidity,
-  hourNow,
+  currently,
 }: CardProps) => {
   return (
-    <S.ContainerCard hourNow={hourNow}>
+    <S.ContainerCard currently={currently}>
       <S.Box>
         <S.Icon source={nounRain} />
         <S.Text>{rainProbability}%</S.Text>

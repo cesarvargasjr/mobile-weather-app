@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 import fonts from '../../../utils/fonts'
 import colors from "../../../utils/colors";
 
-export const ContainerCard = styled.View<{ hourNow: string }>`
+export const ContainerCard = styled.View<{ currently: string }>`
   align-items: center;
   justify-content: space-evenly;
   flex-direction: row;
@@ -10,8 +10,8 @@ export const ContainerCard = styled.View<{ hourNow: string }>`
   border-radius: 20px;
   width: 100%;
   margin-top: 30px;
-  background-color: ${({ hourNow }) =>
-    hourNow > "17" && hourNow < "6"
+  background-color: ${({ currently }) =>
+    currently === "noite"
       ? colors.backgroundDay
       : colors.backgroundNight
   };
