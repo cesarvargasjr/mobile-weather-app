@@ -2,15 +2,8 @@ import React, { useEffect, useState } from "react";
 import { ScrollView } from "react-native";
 import { getWeather } from "../../services/weather";
 import { WeatherToday } from "../../components/WeatherToday";
+import { CardWeatherToday } from "../../components/Card/WeatherToday";
 import * as S from "./styles";
-
-interface DataProps {
-  condition_code: string;
-  forecast: {
-    max: string;
-    min: string;
-  };
-}
 
 export const Home = () => {
   const [data, setData] = useState<any>();
@@ -31,9 +24,14 @@ export const Home = () => {
       <S.ContainerScreen>
         <WeatherToday
           condition={data?.forecast[0]?.condition}
-          temperature={data?.condition_code}
+          temperature={data?.temp}
           temperatureMax={data?.forecast[0]?.max}
           temperatureMin={data?.forecast[0]?.min}
+        />
+        <CardWeatherToday
+          windSpeedy={data?.wind_speedy}
+          rainProbability={data?.forecast[0]?.rain_probability}
+          humidity={data?.humidity}
         />
       </S.ContainerScreen>
     </ScrollView>
