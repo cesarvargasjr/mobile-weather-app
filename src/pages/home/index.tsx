@@ -17,6 +17,7 @@ export const Home = () => {
   const [loading, setLoading] = useState(false);
   const [city, setCity] = useState<string>("São Paulo, SP");
   const [showDropdown, setShowDropdown] = useState(false);
+  const hourNow = new Date()?.toString().slice(16, 18);
   const weatherWeek = data?.forecast?.slice(1, 8);
 
   const handleWeather = async () => {
@@ -30,11 +31,14 @@ export const Home = () => {
     handleWeather();
   }, [city]);
 
-  console.log("==========", city);
-  console.log("==========", data?.city_name);
-
   return (
-    <LinearGradient colors={["#08244F", "#134CB5", "#0B42AB"]}>
+    <LinearGradient
+      colors={
+        hourNow > "17" && hourNow < "6"
+          ? ["#08244F", "#134CB5", "#0B42AB"]
+          : ["#29B2DD", "#29B2DD", "#2DC8EA"]
+      }
+    >
       {showDropdown && (
         <S.Background onTouchEnd={() => setShowDropdown(false)} />
       )}
@@ -55,7 +59,7 @@ export const Home = () => {
           <S.TextLoading>Carregando...</S.TextLoading>
         </S.ContainerLoading>
       ) : (
-        <S.ContainerScreen>
+        <S.ContainerScreen showsVerticalScrollIndicator={false}>
           <S.ContainerLocation>
             <S.Icon source={location} />
             <TouchableOpacity
@@ -80,8 +84,9 @@ export const Home = () => {
             windSpeedy={data?.wind_speedy}
             rainProbability={data?.forecast[0]?.rain_probability}
             humidity={data?.humidity}
+            hourNow={hourNow}
           />
-          <S.ContainerCardWeek>
+          <S.ContainerCardWeek hourNow={hourNow}>
             <S.Box>
               <S.TitleCardWeek>Next Forecast</S.TitleCardWeek>
               <S.Icon source={calendar} />

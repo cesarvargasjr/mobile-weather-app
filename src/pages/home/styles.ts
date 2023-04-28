@@ -13,14 +13,19 @@ export const ContainerLoading = styled.View`
   justify-content: center;
 `;
 
-export const ContainerCardWeek = styled.View`
+export const ContainerCardWeek = styled.View<{ hourNow: string }>`
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   width: 100%;
   margin-top: 30px;
   margin-bottom: 80px;
   padding: 5%;
+  /* opacity: 0.3; */
+  background-color: ${({ hourNow }) =>
+    hourNow > "17" && hourNow < "6"
+      ? colors.backgroundDay
+      : colors.backgroundNight
+  };
 `;
 
 export const ContainerDropDown = styled.ScrollView`
