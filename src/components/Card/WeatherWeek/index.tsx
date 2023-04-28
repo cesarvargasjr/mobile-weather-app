@@ -35,7 +35,7 @@ export const CardWeatherWeek = ({
   return (
     <>
       <S.Box>
-        <S.Text>{day}</S.Text>
+        <S.TextDay>Domingo</S.TextDay>
         {renderIcon()}
         <S.BoxTemp>
           <S.BoxTemp>
