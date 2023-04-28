@@ -1,23 +1,44 @@
 import styled from "styled-components/native";
 import fonts from "../../utils/fonts";
-import { LinearGradient } from 'expo-linear-gradient';
 import colors from "../../utils/colors";
 
-export const ContainerScreen = styled(LinearGradient).attrs({ colors: ['#08244F', '#134CB5', '#0B42AB'] })`
-  background-color: LinearGradient;
-  min-height: 100%;
-  align-items: center;
-  justify-content: center;
+export const ContainerScreen = styled.ScrollView`
   padding: 10% 8%;
+  height: 100%;
 `;
 
-export const ContainerCardWeek = styled.View`
+export const ContainerLoading = styled.View`
+  height: 100%;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.25);
+  justify-content: center;
+`;
+
+export const ContainerCardWeek = styled.View<{ hourNow: string }>`
+  align-items: center;
   border-radius: 20px;
   width: 100%;
   margin-top: 30px;
+  margin-bottom: 80px;
   padding: 5%;
+  /* opacity: 0.3; */
+  background-color: ${({ hourNow }) =>
+    hourNow > "17" && hourNow < "6"
+      ? colors.backgroundDay
+      : colors.backgroundNight
+  };
+`;
+
+export const ContainerDropDown = styled.ScrollView`
+  position: absolute;
+  min-width: 230px;
+  max-height: 140px;
+  border-radius: 20px;
+  padding: 20px 20px 0 20px;
+  background-color: ${colors.blue};
+  top: 105px;
+  left: 40px;
+  z-index: 99999;
+  flex-direction: column;
 `;
 
 export const Box = styled.View`
@@ -26,6 +47,14 @@ export const Box = styled.View`
   justify-content: space-between;
   width: 100%;
   margin-bottom: 20px;
+`;
+
+export const ContainerLocation = styled.View`
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-top: 25px;
 `;
 
 export const Icon = styled.Image`
@@ -45,4 +74,20 @@ export const TextLoading = styled.Text`
   color: ${colors.white};
   width: 100%;
   text-align: center;
+  margin-top: 20px;
+`;
+
+export const TextLocation = styled.Text`
+  font-size: 18px;
+  font-family: ${fonts.semiBold};
+  color: ${colors.white};
+  margin-left: 8px;
+  margin-right: 15px;
+`;
+
+export const Background = styled.View`
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  position: absolute;
 `;

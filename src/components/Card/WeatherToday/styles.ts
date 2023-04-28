@@ -2,15 +2,19 @@ import styled from "styled-components/native";
 import fonts from '../../../utils/fonts'
 import colors from "../../../utils/colors";
 
-export const ContainerCard = styled.View`
+export const ContainerCard = styled.View<{ hourNow: string }>`
   align-items: center;
   justify-content: space-evenly;
   flex-direction: row;
-  background-color: rgba(0, 0, 0, 0.25);
   height: 47px;
   border-radius: 20px;
   width: 100%;
   margin-top: 30px;
+  background-color: ${({ hourNow }) =>
+    hourNow > "17" && hourNow < "6"
+      ? colors.backgroundDay
+      : colors.backgroundNight
+  };
 `;
 
 export const Text = styled.Text`
