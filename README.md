@@ -44,6 +44,7 @@ Para finalizar, defini fontes e cores globais que auxiliam e proporcionam um des
 
 - A API disponibilizada tinha uma limitação de acessos por IP, devido a essa questão, eu tinha duas opções. Fazer um mock de dados ou assinar o plano básico da API para ter um número de acessos mais abrangente. Optei pelo plano de assinatura por que proporciona um formato mais real do cotidiano de um desenvolvedor;
 - Não foi desenvolvida a funcionalidade de visualizar a previsão do tempo a cada hora, devido que, o plano de assinatura não cobria o consumo destas informações. Nem mesmo, sem o plano de assinatura com o número de acessos limitados para utilização gratuita da API como demonstração para saber o que ela proporcionava, não eram disponibilizadas estas informações.
+- Devido a questão da chave e assinatura para consumir a API sem limitações, inclui no arquivo .env minha chave particular para que o avaliador do repositório não tenha problemas ao executá-lo. Não é uma boa prática mas como é um teste técnico e meu objetivo é ter a garantia da sua análise fiz dessa forma.
 
 ##
 
