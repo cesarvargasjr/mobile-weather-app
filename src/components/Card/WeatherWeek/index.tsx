@@ -10,33 +10,58 @@ interface CardProps {
   tempMin: number;
   tempMax: number;
   condition: string;
+  date: string;
 }
 
 export const CardWeatherWeek = ({
   day,
+  date,
   tempMin,
   tempMax,
   condition,
 }: CardProps) => {
-  const renderIcon = () => {
-    if (condition === "rain") {
-      return <S.Icon source={midRainIcon} resizeMode="contain" />;
-    } else if (condition === "cloudly_day") {
-      return <S.IconSecondary source={cloundlyIcon} resizeMode="contain" />;
-    } else if (condition === "clear_day") {
-      return <S.IconSecondary source={sunIcon} resizeMode="contain" />;
-    } else if (condition === "cloud") {
-      return <S.IconSecondary source={sunCloundlyIcon} resizeMode="contain" />;
-    } else {
-      return <S.IconSecondary source={sunCloundlyIcon} resizeMode="contain" />;
+  const handleIcon = () => {
+    switch (condition) {
+      case "rain":
+        return <S.Icon source={midRainIcon} resizeMode="contain" />;
+      case "cloudly_day":
+        return <S.IconSecondary source={cloundlyIcon} resizeMode="contain" />;
+      case "clear_day":
+        return <S.IconSecondary source={sunIcon} resizeMode="contain" />;
+      case "cloud":
+        return (
+          <S.IconSecondary source={sunCloundlyIcon} resizeMode="contain" />
+        );
+    }
+  };
+
+  const handleDay = () => {
+    switch (day) {
+      case "Seg":
+        return <S.TextDay>Segunda</S.TextDay>;
+      case "Ter":
+        return <S.TextDay>Terça</S.TextDay>;
+      case "Qua":
+        return <S.TextDay>Quarta</S.TextDay>;
+      case "Qui":
+        return <S.TextDay>Quinta</S.TextDay>;
+      case "Sex":
+        return <S.TextDay>Sexta</S.TextDay>;
+      case "Sáb":
+        return <S.TextDay>Sábado</S.TextDay>;
+      case "Dom":
+        return <S.TextDay>Domingo</S.TextDay>;
     }
   };
 
   return (
     <>
       <S.Box>
-        <S.TextDay>Domingo</S.TextDay>
-        {renderIcon()}
+        <S.ContainerColumn>
+          {handleDay()}
+          <S.TextDate>{date}</S.TextDate>
+        </S.ContainerColumn>
+        {handleIcon()}
         <S.BoxTemp>
           <S.BoxTemp>
             <S.Text>{tempMax}</S.Text>

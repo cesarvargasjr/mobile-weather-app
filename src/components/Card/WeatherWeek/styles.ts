@@ -12,7 +12,18 @@ export const TextDay = styled.Text`
   font-size: 18px;
   font-family: ${fonts.bold};
   color: ${colors.white};
-  max-width: 130px;
+  max-width: 140px;
+  min-width: 110px;
+`;
+
+export const TextDate = styled.Text`
+  font-size: 14px;
+  font-family: ${fonts.semiBold};
+  color: ${colors.white};
+`;
+
+export const ContainerColumn = styled.View`
+  flex-direction: column;
 `;
 
 export const TextTempMin = styled.Text`

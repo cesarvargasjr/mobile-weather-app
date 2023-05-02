@@ -30,8 +30,6 @@ export const Home = () => {
     handleWeather();
   }, [city]);
 
-  console.log("==============", data);
-
   return (
     <LinearGradient
       colors={
@@ -76,10 +74,12 @@ export const Home = () => {
             </TouchableOpacity>
           </S.ContainerLocation>
           <WeatherToday
+            description={data?.forecast[0]?.description}
             condition={data?.forecast[0]?.condition}
             temperature={data?.temp}
             temperatureMax={data?.forecast[0]?.max}
             temperatureMin={data?.forecast[0]?.min}
+            currently={data?.currently}
           />
           <CardWeatherToday
             windSpeedy={data?.wind_speedy}
@@ -96,6 +96,7 @@ export const Home = () => {
               <CardWeatherWeek
                 key={i}
                 day={item?.weekday}
+                date={item?.date}
                 tempMin={item?.min}
                 tempMax={item?.max}
                 condition={item?.condition}

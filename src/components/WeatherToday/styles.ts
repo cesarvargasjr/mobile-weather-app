@@ -29,3 +29,10 @@ export const Image = styled.Image`
   height: 187px;
   width: 284px;
 `;
+
+export const ImageNight = styled.Image`
+  height: 160px;
+  width: 160px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+`;
