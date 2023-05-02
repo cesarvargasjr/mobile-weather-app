@@ -82,6 +82,16 @@ $ npx expo start
 
 ##
 
+### QR Code para acessar o build da aplicação:
+
+Este projeto é compatível com as plataformas Android e IOS, no entanto, neste momento somente smartphones Android conseguirão navegar no aplicativo através deste QR Code. Caso queira acessar a aplicação em um smartphone IOS será necessário fazer o clone deste repositório e executar o projeto localmente conforme os passos indicados na seção anterior.
+
+<p align="center">
+<img width="292" alt="image" src="https://user-images.githubusercontent.com/72532360/235743384-2d6630c0-d9ed-42a8-b341-e1368c7c6040.png">
+</p>
+
+##
+
 ### Screenshot da aplicação:
 
 <p align="center">
