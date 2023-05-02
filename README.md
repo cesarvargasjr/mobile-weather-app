@@ -1,37 +1,95 @@
-# Processo seletivo para desenvolvedor mobile
+## Projeto consumindo API de previsão do tempo
 
-Olá,
+### Objetivo do desenvolvimento:
 
-Estamos em busca de pessoas que gostem de tecnologia e queiram fazer parte da nossa equipe de desenvolvimento mobile! Se você é um desenvolvedor apaixonado por novas tecnologias, que gosta de trabalhar em equipe e tem vontade de aprender, então essa é a sua chance.
+Tem-se por objetivo desenvolver uma aplicação usando React Native, tanto para usuários de smartphones Android quanto IOS, atendendo o layout disponibilizado no [Figma](https://www.figma.com/community/file/1158928016905524023) criado pela [@becabelin](https://www.figma.com/@becabelin). Além disso consumir a API ([Acessar API](https://api.hgbrasil.com/weather)) com a previsão do tempo.
 
-O processo seletivo é simples, vamos pedir que você desenvolva um aplicativo, para que possamos avaliar seu potencial. A instrução completa esta mais abaixo.
+##
 
-Depois dessa etapa, vamos avaliar todos os candidatos que realizarem a submissão no tempo correto, que serão convidados para uma entrevista final, com parte do nosso time, para discutir os detalhes e forma de  trabalho, basicamente para verificarmos se vai dar "_match_".
+### Detalhes do desenvolvimento do projeto:
 
-Caso seja selecionado, você irá trabalhar em um ambiente descontraído e inovador, com profissionais de alta qualidade e muitas oportunidades de aprendizado. Além disso, terá a chance de participar do desenvolvimento de um projeto inovador na área da educação.
+Antes de iniciar o desenvolvimento de fato, após entender claramente a proposta do teste, criei um roadmap para evoluir as implementações de forma organizada e planejada. Desde o início criando branches para cada feature e realizando mesclagens após a conclusão das etapas para maior segurança na implementação.
+Tendo também como princípio três pilares, UI, UX e Código. Como base para proporcionar interfaces interativas e agradáveis para o usuário, experiência intuitiva e performática na utilização do sistema, e é claro, um código bem construído, de forma clean e legível para facilitar o entendimento de qualquer programador que for dar manutenção.
 
-E então, vamos nessa? Mostre para nós que você é o profissional que estamos procurando!
+Aprofundando um pouco a parte técnica, para o consumo da API utilizei o Axios. A API disponibilizada exigia uma chave para acessá-la, sendo assim, segui padrões de segurança utilizando um arquivo .env com as credenciais. Não esquecendo de tratar possíveis erros de requisições evitando gerar experiência negativa ao usuário. Além disso, apliquei uma arquitetura organizada conforme a convenção recomenda e componentizando todos os componentes que possam ser reutilizados em outros pontos do sistema, dessa forma, além de ser possível reutilizá-los tornam os códigos implementados mais otimizados e organizados para futuras manutenções.
 
-## Instruções
+Alterei a splashscreen e ícones da aplicação para proporcionar uma identidade visual agradável e uma identificação padronizada.
 
-Se você resolveu topar o desafio, vamos lá! Primeiro de tudo, faça o **fork** deste repositório. Você deverá desenvolver um aplicativo de previsão do tempo. O aplicativo pode ser desenvolvidor em [Flutter](https://flutter.dev/) ou [React-Native](https://reactnative.dev/).
+Para finalizar, defini fontes e cores globais que auxiliam e proporcionam um desenvolvimento veloz e garante que os estilos utilizados estão seguindo o padrão pré-definido. Em relação aos testes end-to-end realizei todos no emulador e em meu smarthphone sendo os dois IOS.
 
-O resultado final deverá ser parecido com:
+##
 
-![](images/thumbnail-figma.png)
+### Funcionalidades desenvolvidas:
 
-Esta tela pode ser encontrada neste [Figma Community](https://www.figma.com/community/file/1158928016905524023) criado pela [@becabelin](https://www.figma.com/@becabelin). Claro que uma ou outra coisa pode ser adaptada, mas essa adaptação depois poderá ser questionada na entrevista.
+- Tela principal com informações referente a previsão do tempo do dia e dos próximos dias. Não só informando a temperatura mas também a probabilidade de chuvas, percentual de umidade e velocidade do vento;
+- Dropdown com opções de cidades para o usuário escolher qual deseja naquele momento visuazar a sua previsão do tempo;
+- A cor do background do aplicativo é dinâmica conforme o turno, por exemplo, se o app for acessado durante o dia o background é azul claro, se for a noite é azul escuro;
+- O ícone exibido na parte superior, referente a temperatura daquele momento em questão também é dinâmico conforme o turno. Se for durante o dia exibe-se um Sol, se for a noite altera-se para uma Lua;
+- Card com a previsão do tempo para os próximos sete dias, exibindo o dia da semana, data em questão e a termperatura mínima e máxima.
 
-Os dados podem ser consumidos da seguinte [API](https://api.hgbrasil.com/weather). Caso queira utilizar outra, escolha uma aberta e envie as intruções de uso, caso necessário.
+##
 
-Ao fim, altere o `README.md` com instruções para instalação e execução do aplicativo.
+### Tecnologias utilizadas no desenvolvimento:
 
-Os pontos que serão avaliados:
+- React Native
+- Typescript
+- JavaScript
+- HTML
+- CSS (Styled Components)
+- Axios
 
-- fidelidade com o mock
-- funcionalidade
-- organização de componentes
-- organização de commits
-- organização de código
+##
 
-Boa sorte 🍀! Aguardamos sua submissão!
+### Observações: 
+
+- A API disponibilizada tinha uma limitação de acessos por IP, devido a essa questão, eu tinha duas opções. Fazer um mock de dados ou assinar o plano básico da API para ter um número de acessos mais abrangente. Optei pelo plano de assinatura por que proporciona um formato mais real do cotidiano de um desenvolvedor;
+- Não foi desenvolvida a funcionalidade de visualizar a previsão do tempo a cada hora, devido que, o plano de assinatura não cobria o consumo destas informações. Nem mesmo, sem o plano de assinatura com o número de acessos limitados para utilização gratuita da API como demonstração para saber o que ela proporcionava, não eram disponibilizadas estas informações.
+
+##
+
+### Para executar o projeto:
+
+```bash
+# Clonar o repositório:
+$ git clone https://github.com/cesarvargasjr/mobile-weather-app.git
+```
+
+```bash
+# Acessar a pasta do projeto via terminal:
+$ cd mobile-weather-app
+```
+
+```bash
+# Instale as dependências:
+$ npm i
+```
+
+```bash
+# Execute a aplicação:
+$ expo start
+# ou
+$ npx expo start
+```
+
+```bash
+# Instale o EXPO em seu emulador.
+```
+
+```bash
+# Após realizar os itens acima, em seu terminal digite "A" para executar a aplicação em um emulador Android ou "I" para emulador IOS.
+```
+
+##
+
+### Screenshot da aplicação:
+
+<p align="center">
+<img width="354" alt="image" src="https://user-images.githubusercontent.com/72532360/235737915-cb562678-d056-42be-a813-3af33acc79eb.png">
+
+<img width="352" alt="image" src="https://user-images.githubusercontent.com/72532360/235738144-c70ae9f6-0b3a-4e2b-9db1-63e90ae4daf4.png">
+
+<img width="349" alt="image" src="https://user-images.githubusercontent.com/72532360/235738455-594176b7-7b5a-4939-8c64-a11b6716753d.png">
+
+<img width="351" alt="image" src="https://user-images.githubusercontent.com/72532360/235738666-b5caa52f-ada0-4051-9dde-4f1f978ca790.png">
+
+</p>
