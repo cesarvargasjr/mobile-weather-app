@@ -54,6 +54,10 @@ Para finalizar, defini fontes e cores globais que auxiliam e proporcionam um des
 ```bash
 $ git clone https://github.com/cesarvargasjr/mobile-weather-app.git
 ```
+### ou
+```bash
+git@github.com:cesarvargasjr/mobile-weather-app.git
+```
 
 ### Acessar a pasta do projeto via terminal
 ```bash
