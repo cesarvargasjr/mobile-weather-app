@@ -48,28 +48,26 @@ Para finalizar, defini fontes e cores globais que auxiliam e proporcionam um des
 
 ##
 
-### Para executar o projeto:
+## Para executar o projeto:
 
+### Clonar o repositório:
 ```bash
-# Clonar o repositório:
 $ git clone https://github.com/cesarvargasjr/mobile-weather-app.git
 ```
 
+### Acessar a pasta do projeto via terminal:
 ```bash
-# Acessar a pasta do projeto via terminal:
 $ cd mobile-weather-app
 ```
 
+### Instale as dependências:
 ```bash
-# Instale as dependências:
 $ npm i
 ```
 
+### Execute a aplicação:
 ```bash
-# Execute a aplicação:
 $ expo start
-# ou
-$ npx expo start
 ```
 
 ```bash
