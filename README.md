@@ -50,33 +50,29 @@ Para finalizar, defini fontes e cores globais que auxiliam e proporcionam um des
 
 ## Para executar o projeto:
 
-### Clonar o repositório:
+### Clonar o repositório
 ```bash
 $ git clone https://github.com/cesarvargasjr/mobile-weather-app.git
 ```
 
-### Acessar a pasta do projeto via terminal:
+### Acessar a pasta do projeto via terminal
 ```bash
 $ cd mobile-weather-app
 ```
 
-### Instale as dependências:
+### Instale as dependências
 ```bash
 $ npm i
 ```
 
-### Execute a aplicação:
+### Execute a aplicação
 ```bash
 $ expo start
 ```
 
-```bash
-# Instale o EXPO em seu emulador.
-```
+- Instale o EXPO em seu emulador.
 
-```bash
-# Após realizar os itens acima, em seu terminal digite "A" para executar a aplicação em um emulador Android ou "I" para emulador IOS.
-```
+- Após realizar os itens acima, em seu terminal digite "A" para executar a aplicação em um emulador Android ou "I" para emulador IOS.
 
 ##
 
